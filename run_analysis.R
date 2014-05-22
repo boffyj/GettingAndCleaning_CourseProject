@@ -47,3 +47,6 @@ require(reshape2)
 xmelt = melt(x, id=c("subject","activity"))
 xcast = dcast(xmelt,subject+activity~variable,mean)
 
+#write to comma-separated text file
+write.table(xcast,file="SmartphoneTidy.txt",sep=",")
+
